@@ -5,17 +5,15 @@ Most of the websites compress their resources such as JS files in order to incre
 
 <b>Using the application:</b>
 
-Step 0- (Downloading) Download ["jsbeautifier.jar"](jsbeautifier/jsbeautifier.jar) file and ["libs"](jsbeautifier/libs/) directory.
+Step 0- (Downloading) Download latest version from [releases](https://github.com/CoreyD97/BurpSuiteJSBeautifier/releases).
 
-Step 1- (Adding Libraries) Now under "Extender" tab, click on the "Options" tab; in "Java Environment" section, click on "Select folder ..." button and select the "libs" folder that contains "js.jar" and "rsyntaxtextarea.jar".
+Step 1- (Adding Extension) In Burp Suite, click on the "Extender" tab, then click on "Add" button and select "jsbeautifier.jar" file.
 
-Step 2- (Adding Extension) In Burp Suite, click on the "Extender" tab, then click on "Add" button and select "jsbeautifier.jar" file.
-
-Step 3- (Testing Extension) Now you should be able to see "JSBeautifier Settings" tab in burp suite. You can also manually beautify requests/responses by using right click and selecting the "Beautify This!" option. If it cannot beautify anything, check your Burp Suite extension settings and make sure that you have added the requested libraries; Unload/Load the extension and try again.
+Step 2- (Testing Extension) Now you should be able to see "JSBeautifier Settings" tab in burp suite. You can also manually beautify requests/responses by using right click and selecting the "Beautify This!" option. If it cannot beautify anything, check your Burp Suite extension settings and make sure that you have added the requested libraries; Unload/Load the extension and try again.
 
 <b>Features:</b>
 
-- Works with the latest version of Burp Suite (tested on 1.5.21)
+- Works with the latest version of Burp Suite (tested on 2.0.07)
 - Manual beautifying the requests/responses
 - Automatic beautifying the responses in proxy
 - Automatic beautifying the responses in all tabs
@@ -43,9 +41,7 @@ If you have found an issue, please use “Debug Mode” option and attach the ex
 
 <b>Tested on:</b>
 
-This extension has been tested on Burp Suite Pro v1.5.21 with Java v7ux.
-If you are using an older version of Burp Suite, you may be able to use version 0.1a of this extension which is located at https://code.google.com/p/burp-suite-beautifier-extension/
-
+This extension has been tested on Burp Suite Pro v2.0.07 with Java 11.
 
 <b>Some screenshots:</b>
 
