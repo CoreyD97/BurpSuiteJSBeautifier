@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JMenuItem;
 import burp.JSBeautifier.BeautifierPreferences;
+import burp.JSBeautifier.JSBeautifierManualMenu;
 
 
 public class BurpExtender implements IBurpExtender, IHttpListener, 
@@ -114,7 +115,7 @@ IExtensionStateListener, IContextMenuFactory
 	@Override
 	public List<JMenuItem> createMenuItems(IContextMenuInvocation invocation) {
         List<JMenuItem> menuItems = new ArrayList<JMenuItem>();
-        JMenuItem item = new JMenuItem(new burp.JSBeautifier.JSBeautifierManualMenu(mCallbacks, invocation, stdout,beautifierPreferences));
+        JMenuItem item = new JMenuItem(new JSBeautifierManualMenu(mCallbacks, invocation, stdout,beautifierPreferences));
         menuItems.add(item);
         return menuItems;
 	}

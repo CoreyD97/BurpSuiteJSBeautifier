@@ -322,7 +322,7 @@ public class JSBeautifierFunctions {
 
 					InputStream[] fileStreams = new InputStream[fileList.length];
 					for (int i=0;i<fileStreams.length;i++){
-						fileStreams[i] = getClass().getResourceAsStream("/"+fileList[i]);
+						fileStreams[i] = getClass().getResourceAsStream("/" + fileList[i]);
 
 					}
 

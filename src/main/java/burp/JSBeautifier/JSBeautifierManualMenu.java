@@ -1,5 +1,6 @@
 package burp.JSBeautifier;
 
+import burp.IBurpExtenderCallbacks;
 import burp.IContextMenuInvocation;
 
 import java.io.PrintWriter;
@@ -8,12 +9,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 public class JSBeautifierManualMenu  extends AbstractAction{
-	private burp.IBurpExtenderCallbacks mCallbacks;
+	private IBurpExtenderCallbacks mCallbacks;
 	private final BeautifierPreferences beautifierPreferences;
 	private IContextMenuInvocation invocation;
 	private PrintWriter stdout;
 	
-	public JSBeautifierManualMenu(burp.IBurpExtenderCallbacks callbacks,IContextMenuInvocation invocation,PrintWriter stdout,BeautifierPreferences beautifierPreferences){
+	public JSBeautifierManualMenu(IBurpExtenderCallbacks callbacks,IContextMenuInvocation invocation,PrintWriter stdout,BeautifierPreferences beautifierPreferences){
 		super("Beautify This!");
 		this.mCallbacks = callbacks;
 		this.stdout = stdout;
@@ -49,8 +50,11 @@ public class JSBeautifierManualMenu  extends AbstractAction{
 			stdout.println("msgType: " + msgType);
 		}
 		JSBeautifierFunctions jsBeautifierFunctions = new JSBeautifierFunctions(mCallbacks,beautifierPreferences);
-		
-		jsBeautifierFunctions.beautifyIt(invocation.getSelectedMessages(),false,msgType); // Manual mode
+
+		JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), "Working... Please wait.", "JSBeautifier", JOptionPane.INFORMATION_MESSAGE);
+		new Thread(() -> {
+			jsBeautifierFunctions.beautifyIt(invocation.getSelectedMessages(),false,msgType); // Manual mode
+		}).start();
 		
 	}
 	
