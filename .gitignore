@@ -6,3 +6,5 @@ releases
 build
 # Ignore Gradle out directory
 out
+# Ignore IntelliJ idea directory
+.idea
